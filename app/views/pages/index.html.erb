@@ -2,9 +2,16 @@
 <% if current_user.nil? %>
     <%= link_to user_session_path do %>
        Login
-     
+ 
       <%end%>
       <% else %> 
       <%= link_to destroy_user_session_path, method: :delete do %>  Logout
+      <%= link_to new_tour_path do %>  Додати Тур
+		<% end %>
       <%end%>
       <%end%>
+
+
+<% @tours.each do |tour| %>
+    <%= render 'tours/tour', tour:tour %>
+<%end%>

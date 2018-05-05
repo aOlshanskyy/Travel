@@ -1,0 +1,29 @@
+<%= form_for @tour do |f| %>
+
+<div class="form-group">
+   <%= f.label :title %>
+   <%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+   <%= f.label :shortbody %>
+   <%= f.text_area :shortbody, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+   <%= f.label :body %>
+   <%= f.text_area :body, class: 'form-control' %>
+</div>
+
+
+<div class="form-group">
+   <%= f.label :price %>
+   <%= f.text_field :price, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+   <%= f.submit 'Зберегти', class: 'btn btn-primary' %>
+     <%= link_to 'Назад', :back, class: 'btn btn-outline-secondary'%>
+</div>
+
+<% end %>
