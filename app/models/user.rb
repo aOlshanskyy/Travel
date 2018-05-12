@@ -10,4 +10,7 @@ class User < ApplicationRecord
       validates :phone, presence:true
        validates :country, presence:true
        validates :city,  presence:true
+
+        has_many :tours
+         
 end

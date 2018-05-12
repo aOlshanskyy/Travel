@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
 
+get "/categories/:id", to: "tours#categories", as: "categories" 	 
 
   devise_for :users
 resources :tours

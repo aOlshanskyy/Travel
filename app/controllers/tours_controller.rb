@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+    before_action :authenticate_user!, exist:[:show]
+    before_action :set_tour, only:[:show]
   def index
   end
 
@@ -8,8 +10,9 @@ class ToursController < ApplicationController
 
   def create
 
-  	@tour = Tour.new(tour_params)
-	if @tour.save
+     params[:tour][:category_id]=params[:category_id]
+     @tour = current_user.tours.build(tour_params)
+	  if @tour.save
 			redirect_to root_path
 		else render 'new'
 		end
@@ -19,9 +22,19 @@ class ToursController < ApplicationController
   def show
   end
 
+  def category
+    pp @tours=Tour.where(category_id: params[:id])
+  end
+
+
+
   private
 
   def tour_params
   	params.require(:tour).permit(:title, :shortbody, :body, :price, :category_id, :user_id)
+  end
+
+  def set_tour
+    @tour=Tour.find(params[:id])
   end
 end
