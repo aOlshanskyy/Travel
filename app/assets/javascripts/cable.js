@@ -11,3 +11,7 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$('.carousel').carousel({
+    interval: 3000 //changes the speed
+})
