@@ -34,7 +34,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend">@</span>
         </div>
-        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+        <input type="date" class="form-control" id="input-date" placeholder="date" required>
         <div class="invalid-feedback">
           Please choose a username.
         </div>
@@ -95,7 +95,14 @@
   </ul>
 </div>
 
+
 <% @tours.each do |tour| %>
     <%= render 'tours/tour', tour:tour %>
 <%end%>
 
+<script type="text/javascript">
+  var date = document.querySelector("#input-date");
+  date.onchange = function(){
+    console.log(date.value);
+  }
+</script>
