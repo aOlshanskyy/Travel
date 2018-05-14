@@ -9,6 +9,13 @@ RSpec.describe User, :type => :model do
        it "is valid with valid attributes" do
          expect(subject).to be_valid
        end
+
+    context "association" do
+     	it { should have_one(:userparam)}
+  		it { should have_many(:tour)}
+  		
+  	
+
   end
  
 end
