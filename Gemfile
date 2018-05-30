@@ -50,6 +50,8 @@ gem 'devise'
 gem 'activeadmin'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+#Avatar
+gem "paperclip", "~> 5.0.0"
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

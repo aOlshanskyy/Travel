@@ -38,7 +38,7 @@ before_action :get_userparam, except: [:new, :create]
 private
 
   def userparams_params
-    params.require(:userparam).permit(:user_id, :firstname, :lastname, :country, :city, :phone)
+    params.require(:userparam).permit(:user_id, :firstname, :lastname, :country, :city, :phone, :avatar)
   end
 
   def get_userparam
