@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_one :userparam, dependent: :destroy
 
-        has_many :tours
+  has_many :tours
+  has_many :orders
          
 end
