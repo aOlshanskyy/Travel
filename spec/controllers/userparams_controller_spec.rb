@@ -36,7 +36,7 @@ login_user
   end
 
   describe 'PATCH #update' do
-  	before do
+    before do
       @userparam = create(:userparam, user_id: subject.current_user.id)
     end  
     it "should update userparam and redirect to profile" do

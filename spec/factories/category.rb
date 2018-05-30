@@ -1,7 +1,6 @@
 FactoryBot.define do
-  factory :tour do
-  	:category
-      name "Test category"
+  factory :category do
+      name "Testcategory"
       
        
   end
