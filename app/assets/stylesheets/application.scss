@@ -134,3 +134,27 @@ body {
 .copy-c{
     padding-top:30px;
 }
+.main{
+    margin-top: -90px;   
+    background-image: url("https://avatars.mds.yandex.net/get-pdb/51720/9d342055-180e-4363-92be-516bb379e9f1/orig");
+    background-size: cover;
+    height: 100%;
+    padding-top: 55px;
+
+    .my-container{
+        max-width: 600px!important;
+        width: 100%;
+        /*margin-top: 55px;*/
+        /*background-color: red;*/
+        /*margin-bottom: 60px;*/
+        border: 2px solid white;
+        border-radius: 7px; 
+        padding: 20px;
+        background-color: rgba(0,0,0, 0.5);
+        /*opacity: 0.5;*/
+      }
+    .content{
+        color: white;
+        opacity: 1!important; 
+    }
+}
