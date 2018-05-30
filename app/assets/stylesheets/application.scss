@@ -134,13 +134,25 @@ body {
 .copy-c{
     padding-top:30px;
 }
+
+img{
+    max-width: 100%;
+}
 .main{
     margin-top: -90px;   
     background-image: url("https://avatars.mds.yandex.net/get-pdb/51720/9d342055-180e-4363-92be-516bb379e9f1/orig");
     background-size: cover;
     height: 100%;
     padding-top: 55px;
-
+    padding-bottom: 24px;
+    .btn_my{
+        margin-top: 12px;
+        transition: all 300ms;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
     .my-container{
         max-width: 600px!important;
         width: 100%;
@@ -152,9 +164,24 @@ body {
         padding: 20px;
         background-color: rgba(0,0,0, 0.5);
         /*opacity: 0.5;*/
+        /*margin-bottom: 24px;*/
       }
     .content{
         color: white;
         opacity: 1!important; 
     }
+    .avatar{
+        width: 50%;
+        img{
+            border-radius: 20px;
+        } 
+    }
+    .flex-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.main_height{
+    padding-bottom: 740px;
 }
