@@ -10,10 +10,8 @@ login_user
   end
 
   describe 'GET #new' do
-    it "should find current_user and open form for create Profile" do
+    it "should find tour" do
       get :new
-      expect(subject.current_user.email).to eq("test@test.com")
-      expect(subject.current_user.email).to_not eq(user.email)
       expect(response).to have_http_status(200)     
     end
   end

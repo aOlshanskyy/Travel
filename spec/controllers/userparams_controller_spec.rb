@@ -9,6 +9,14 @@ login_user
     expect(subject.current_user).to_not eq(nil)
   end
 
+   describe 'GET #index' do
+    it "should redirect current_user" do
+      get :index
+      expect(response).to redirect_to new_userparam_path  
+   
+    end
+  end
+
   describe 'GET #new' do
     it "should find current_user and open form for create Profile" do
       get :new
@@ -20,7 +28,7 @@ login_user
 
   describe 'POST #create' do
     it "should create userparam and redirect to Profile" do
-      post :create, params: {userparam: {firstname:"Tester",lastname: "Tester", phone:"+380505636458"}}
+      post :create, params: {userparam: {firstname:"Tester",lastname: "Tester", phone:3805}}
       expect(subject.current_user.userparam.firstname).to eq("Tester")
       expect(response).to redirect_to userparam_path(subject.current_user.id)
     end

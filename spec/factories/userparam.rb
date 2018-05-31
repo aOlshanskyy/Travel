@@ -4,6 +4,6 @@ FactoryBot.define do
     	lastname "Test"
     	country "Ukraine"
     	city "Uzhhorod"
-    	phone "+380505636459"
+    	phone 3805
   	end
 end
