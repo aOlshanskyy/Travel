@@ -9,13 +9,14 @@ class ToursController < ApplicationController
   end
 
   def create
-
+    if current_user.role == "Editor"
      params[:tour][:category_id]=params[:category_id]
      @tour = current_user.tours.build(tour_params)
-	  if @tour.save
-			redirect_to root_path
-		else render 'new'
-		end
+    if @tour.save
+      redirect_to root_path
+    else render 'new'
+    end
+    end
   end
 
 
