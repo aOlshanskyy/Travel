@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
     before_action :authenticate_user!, exist:[:show]
-    before_action :set_tour, only:[:show]
+    before_action :set_tour, only: [ :show, :edit, :update]
   def index
   end
 
@@ -21,10 +21,20 @@ class ToursController < ApplicationController
 
 
   def show
+    @comments = Tourcomment.where(tour_id: @tour.id)
+    @use = Userparam.all
   end
 
-  def category
+  def categories
     pp @tours=Tour.where(category_id: params[:id])
+  end
+
+  def update
+    if @tour.update_attributes(tour_params)
+      redirect_to @tour
+      else
+        render :edit
+      end
   end
 
 

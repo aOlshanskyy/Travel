@@ -20,9 +20,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/tours/new ">Add Tour</a>
-                    </li>
-                    <li>
                         <a href="/orders/new">Order Tour</a>
                     </li>
                     <li>
@@ -33,7 +30,7 @@
                             Categories
                         </a>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Europe</a></li>
+                        <li><a href="/categories/1">Europe</a></li>
                         <li><a href="#">Mountain travel</a></li>
                         <li><a href="#">Spa travel</a></li>
                         <li><a href="#">See travel</a></li>
@@ -50,11 +47,17 @@
                 <% else %>
                     <%= link_to destroy_user_session_path, method: :delete do %>
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 15px; color: #bcc0c4;">
-                      Logout
+                      Logout   
+                      <% if current_user.role == "Editor" %>
+                        
+                        <a style="margin-left: 10px;"href="/tours/new ">Add Tour</a>
+                   
+                    <%end%>
                     </ul>
                 <%end%>
                 <% end %>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
+
 

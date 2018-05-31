@@ -1,5 +1,11 @@
-<div align="center">
-<% @tours.each do |tour|%>
-<%= render 'tours/tour', tour:tour %>
-<%end%>
+<div class="main main_height">
+  <div class="container my-container ">
+    	<div class="content">
+			<div align="center">
+		<% @tours.each do |tour|%>
+			<%= render 'tours/tour', tour:tour %>
+		<%end%>
+		</div>
+		</div>
+	</div>
 </div>

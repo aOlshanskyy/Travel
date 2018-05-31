@@ -8,13 +8,18 @@ Rails.application.routes.draw do
 get "/categories/:id", to: "tours#categories", as: "categories" 	 
 
   devise_for :users
-
-resources :tours
-
-resources :orders
+ resources :orders
 
 resources :userparams
 
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+resources :tours do
+	resources :tourcomments
+		member do
+		end
+	end
 end
+
+
+
+
+

@@ -8,6 +8,32 @@
 			</div>
 			price : <%= @tour.price%>
 
+		<% @comments.each do |comment|%>
+		<hr>
+	
+		 User: <%= comment.user.email %> </p>
+		<p><%=comment.textofcom%></p>
+		<p style="text-align: right;">Create at: <%= comment.created_at %></p><hr>
+		<%end%>
+
+		<div class="col-md-12">
+							
+						
 		</div>
+		<%= form_for :tourcomment, url: tour_tourcomments_path(@tour.id) do |tour| %>
+
+		<% if flash[:notice] %>
+			<div class="notice"> <%= flash[:notice] %> </div>
+		<% end %>
+		<div align="center">
+		<p><%= tour.label "Залишити відгук" %></p>
+		<%= tour.text_area :textofcom, cols: 70, rows: 5 %><br />
+		<br/>
+		<p><%= tour.submit "Send", class: "btn btn-primary active"%></p><br/>
+		</div>
+		<%end%>
+		</div>
+	
 	</div>
+
 </div>
