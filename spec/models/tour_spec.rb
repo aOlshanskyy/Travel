@@ -1,6 +1,7 @@
 require 'rails_helper'
 RSpec.describe Tour, :type => :model do 
 	let!(:user){create(:user)}
+
 	subject{
 		build(:tour)
 	}

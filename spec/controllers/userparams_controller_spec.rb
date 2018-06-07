@@ -34,6 +34,8 @@ login_user
     end
   end
 
+  
+
   describe 'GET #edit' do
     it "should find current_user and open form for edit Profile" do
       get :edit, params: {id: subject.current_user.id}

@@ -1,47 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe ToursController, type: :controller do
-let!(:user) { build(:user, email: "test@gmail.com") }
-
+let!(:user) { build(:user) }
 login_user
+let!(:tour) { build(:tour) }
+
 
   it "should have a current_user" do
     expect(subject.current_user).to_not eq(nil)
   end
 
-  describe 'GET #new' do
-    it "should find tour" do
+  describe "GET #new" do
+    it "returns http success" do
       get :new
-      expect(response).to have_http_status(200)     
+        expect(response).to have_http_status(:success)
     end
   end
+
+ describe "GET #show" do
+    it "has a 200 status code" do
+      expect(response.status).to eq(200)
+    end
+    it "responds to html by default" do
+      expect(response.content_type)=="text/html"
+    end
+  end
+
 
   describe 'POST #create' do
-    it "should create userparam and redirect to Profile" do
-      post :create, params: {userparam: {firstname:"Tester",lastname: "Tester", phone:"+380505636458"}}
-      expect(subject.current_user.userparam.firstname).to eq("Tester")
-      expect(response).to redirect_to userparam_path(subject.current_user.id)
-    end
-  end
-
-  describe 'GET #edit' do
-    it "should find current_user and open form for edit Profile" do
-      get :edit, params: {id: subject.current_user.id}
-      expect(subject.current_user.email).to eq("test@test.com")
-      expect(subject.current_user.email).to_not eq(user.email)
+    it "should create tour " do
+      post :create, params: {tour: {title:"name", shortbody: "name", body: "name", price: 100, category_id: 1,user_id: subject.current_user.id}}
       expect(response).to have_http_status(200)
+
     end
   end
 
-  describe 'PATCH #update' do
-    before do
-      @userparam = create(:userparam, user_id: subject.current_user.id)
-    end  
-    it "should update userparam and redirect to profile" do
-      patch :update, params: { id: subject.current_user.id, userparam: {firstname: "Tester2"}}
-      expect(subject.current_user.userparam.firstname).to eq("Tester2")
-      expect(response).to redirect_to userparam_path(subject.current_user.id)
-    end
-  end
+
+
+ 
   
 end
