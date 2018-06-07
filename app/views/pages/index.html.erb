@@ -1,15 +1,35 @@
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active">
+          <div class="fill" id="item1"></div>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="1">
+              <div class="fill" id="item2"></div>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="2">
+              <div class="fill" id="item3"></div>
+            </li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" id="image1"></div>
+            </div>
+            <div class="item">
+                <div class="fill" id="image3"></div>
+            </div>
+            <div class="item">
+                <div class="fill" id="image2"></div>
+            </div>
+        </div>
+
+    </header>
+
+
 <h1>Pages#index</h1>
-<% if current_user.nil? %>
-    <%= link_to user_session_path do %>
-       Login
- 
-      <%end%>
-      <% else %> 
-      <%= link_to destroy_user_session_path, method: :delete do %>  Logout
-      <%= link_to new_tour_path do %>  Додати Тур
-		<% end %>
-      <%end%>
-      <%end%>
 
 
 <% @tours.each do |tour| %>

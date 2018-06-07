@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="container my-container">
+    <div class="content">
+    	<div class="flex-container">
+
+    		<div>
+	    		<h1><%= @user.firstname %> Profile</h1>
+
+				Firstname: <%= @user.firstname %><br />
+				Lastname: <%= @user.lastname %><br />
+				Country: <%= @user.country %><br />
+				City: <%= @user.city %><br />
+				Phone: <%= @user.phone %><br />
+    		</div>
+
+			<div class="avatar">
+    		<h1>Дякую за замовлення</h1>
+				 <%= image_tag(@user.avatar, height: '100', width: '100') %><br />
+				</div>
+
+
+    	</div>
+
+
+	<%= link_to "Edit Profile", edit_userparam_path %>
+	</div>
+  </div>
+</div>

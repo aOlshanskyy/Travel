@@ -9,6 +9,9 @@ RSpec.describe User, :type => :model do
        it "is valid with valid attributes" do
          expect(subject).to be_valid
        end
-  end
- 
+    end
+
+    describe "associations" do
+        it { should have_one(:userparam).dependent(:destroy) }
+    end
 end
